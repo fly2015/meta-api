@@ -1,0 +1,9 @@
+FROM jenkins:2.60.3-alpine
+EXPOSE 28080 50000
+USER root
+#RUN chown -R jenkins /var/jenkins_home/tmp
+USER jenkins
+
+
+#docker run --name jenkins -p 28080:8080 jenkins
+#docker run --name jenkins -p 28080:8080 jenkins -d
