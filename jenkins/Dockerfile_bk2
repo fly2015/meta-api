@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:jdk17
+FROM jenkins/jenkins:2.387.1
 USER root
 RUN apt-get update && apt-get install -y lsb-release
 RUN curl -fsSLo /usr/share/keyrings/docker-archive-keyring.asc \
@@ -11,14 +11,13 @@ RUN apt-get update && apt-get install -y docker-ce-cli
 USER jenkins
 RUN jenkins-plugin-cli --plugins "blueocean docker-workflow"
 
-# docker build -t myjenkins-blueocean:jdk17 .
 
-# docker run --name my-jenkins-blueocean --restart=on-failure --detach ^
+# docker run --name jenkins-blueocean --restart=on-failure --detach ^
 #   --network jenkins --env DOCKER_HOST=tcp://docker:2376 ^
 #   --env DOCKER_CERT_PATH=/certs/client --env DOCKER_TLS_VERIFY=1 ^
 #   --volume jenkins-data:/var/jenkins_home ^
 #   --volume jenkins-docker-certs:/certs/client:ro ^
-#   --publish 28080:8080 --publish 50000:50000 myjenkins-blueocean:jdk17
+#   --publish 28080:8080 --publish 50000:50000 jenkins-docker
 
 # docker exec -it jenkins-blueocean bash
 # docker logs jenkins-blueocean
@@ -26,4 +25,3 @@ RUN jenkins-plugin-cli --plugins "blueocean docker-workflow"
 #   sudo apt install wget
 # cd /usr/local/ && wget https://download.oracle.com/java/17/latest/jdk-17_windows-x64_bin.zip
 # find . -type d | grep jdk
-
