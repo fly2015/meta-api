@@ -1,6 +1,6 @@
 # meta-api
 Spring Boot Rest API with many as possible relevant modern technologies
-  +Spring Boot 3.2.3
+- Spring Boot 3.2.3
 - Java 17
 - JWT
 - ELK (elastic search, logstash, kibana)
