@@ -27,3 +27,9 @@ SELECT * FROM USERS; \g
 
 pass jenkins
 bd61823d7f6a4986ab3547a2ba6e3189
+
+
+compile - e
+compile - X debug
+
+mvn compile flyway:migrate -X
