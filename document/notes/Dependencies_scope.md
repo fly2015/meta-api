@@ -1,0 +1,8 @@
+In Maven, dependency scopes are used to limit the visibility of a dependency, and they affect the classpath for different build tasks. Here are the most common scopes:  
+Compile: This is the default scope. If no scope is specified, then the dependency is compile-scoped. Compile dependencies are available in all classpaths.  
+Provided: This is much like compile, but indicates you expect the JDK or a container to provide the dependency at runtime. It is used to compile and run the project, but it is not included in the final package or deployment.  
+Runtime: This scope indicates that the dependency is not required for compilation, but is for execution. It is used when you need to include a dependency for running the project but not for compiling the source code.  
+Test: This scope indicates that the dependency is not required for normal use of the application, and is only available for the test compilation and execution phases. These dependencies are used for testing purposes and are not required for normal project operation.  
+System: This scope is similar to provided except that you have to provide the JAR which contains it explicitly. The artifact is always available and is not looked up in a repository.  
+Import: This scope is only used on a dependency of type pom in the <dependencyManagement> section. It indicates that the specified POM should be replaced with the dependencies in that POM's <dependencyManagement> section.  
+Remember, the scope you choose for a dependency will affect how and when the dependency is included in your project, so choose wisely based on your project's needs.

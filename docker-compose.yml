@@ -54,12 +54,13 @@ services:
       - node.name=es01
       - cluster.name=docker-cluster
       - bootstrap.memory_lock=true
-      - xpack.security.enabled=false
+      - xpack.security.enabled=true
       - "ES_JAVA_OPTS=-Xmx2048m -Xms2048m"
       - cluster.initial_master_nodes=es01
       - discovery.seed_hosts=es01
     volumes:
       - esdata1:/usr/share/elasticsearch/data
+      - ./config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
     ports:
       - "9200:9200"
       - "9300:9300"

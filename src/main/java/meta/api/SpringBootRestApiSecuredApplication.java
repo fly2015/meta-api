@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 public class SpringBootRestApiSecuredApplication {
 
     @Bean
-    public ModelMapper modelMapper(){
+    public static ModelMapper modelMapper(){
         return new ModelMapper();
     }
 

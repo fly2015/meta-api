@@ -33,3 +33,6 @@ compile - e
 compile - X debug
 
 mvn compile flyway:migrate -X
+
+
+docker logs -f postgresdb
