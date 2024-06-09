@@ -17,6 +17,8 @@ pipeline {
     stages {
         stage('Test') {
             steps {
+                // Add this step to change the permissions of the mvnw script
+                sh 'chmod +x ./mvnw'
                 sh './mvnw clean verify'
             }
             post {
