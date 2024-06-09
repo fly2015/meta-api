@@ -22,23 +22,19 @@ pipeline {
                 sh './mvnw clean verify'
             }
             post {
-                apost {
-                     always {
-                         script {
-                             // Check if any test report files exist
-                             if (!fileExists('target/surefire-reports/*.xml')) {
-                                 // If not, create a dummy test report file
-                                 writeFile file: 'target/surefire-reports/empty-test-report.xml', text: '''
-                                     <testsuite name="EmptyTestSuite" tests="1">
-                                         <testcase classname="EmptyTest" name="testNothing"/>
-                                     </testsuite>
-                                 '''
-                             }
-                         }
-                         junit 'target/surefire-reports/*.xml'
-                         junit 'target/failsafe-reports/*.xml'
-                     }
-                 }
+                script {
+                            // Check if any test report files exist
+                            if (!fileExists('target/surefire-reports/*.xml')) {
+                                // If not, create a dummy test report file
+                                writeFile file: 'target/surefire-reports/empty-test-report.xml', text: '''
+                                    <testsuite name="EmptyTestSuite" tests="1">
+                                        <testcase classname="EmptyTest" name="testNothing"/>
+                                    </testsuite>
+                                '''
+                            }
+                        }
+                        junit 'target/surefire-reports/*.xml'
+                        junit 'target/failsafe-reports/*.xml'
             }
         }
 
