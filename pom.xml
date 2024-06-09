@@ -19,7 +19,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>17</java.version>
-        <spring-cloud.version>2023.0.0</spring-cloud.version>
+        <!--<spring-cloud.version>2023.0.0</spring-cloud.version>-->
         <chaos-monkey-spring-boot.version>2.7.0</chaos-monkey-spring-boot.version>
         <testcontainers.version>1.17.6</testcontainers.version>
         <swagger2.version>3.0.0</swagger2.version>
@@ -67,11 +67,11 @@
             <artifactId>micrometer-registry-prometheus</artifactId>
             <scope>runtime</scope>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
             <version>2.2.10.RELEASE</version>
-        </dependency>
+        </dependency>-->
 
         <dependency>
             <groupId>org.flywaydb</groupId>
@@ -184,7 +184,7 @@
 	   </dependency>
     </dependencies>
 
-    <dependencyManagement>
+<!--    <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
@@ -194,7 +194,7 @@
                 <scope>import</scope>
             </dependency>
         </dependencies>
-    </dependencyManagement>
+    </dependencyManagement>-->
 	
 	
     <build>
