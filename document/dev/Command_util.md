@@ -30,3 +30,7 @@ docker run --name my-jenkins-blueocean --restart=on-failure --detach \
 --volume jenkins-data:/var/jenkins_home \
 --volume jenkins-docker-certs:/certs/client:ro \
 --publish 28080:8080 --publish 50000:50000 myjenkins-blueocean:jdk17
+
+
+docker exec -u root -it my-jenkins-blueocean bash
+mvn wrapper:wrapper
